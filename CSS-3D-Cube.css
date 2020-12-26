@@ -1,0 +1,134 @@
+@keyframes spin {
+  from {
+    transform:rotateX(0) rotateY(0);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);/*  rotateZ(360deg) rotateY(360deg); */
+  }
+}
+@keyframes spin2 {
+  from {
+    transform: translate(-50%,-50%) rotateZ(0);
+  }
+  to {
+    transform: translate(-50%,-50%) rotateZ(360deg)/*  rotateZ(360deg) rotateY(360deg); */
+  }
+}
+body {
+  margin:0;
+  width: 100vw;
+  height: 100vh;
+}
+.perspective-3d {
+  perspective: 400;
+}
+.box-con {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 800px;
+  transform-style: preserve-3d;
+  animation: linear spin 2.5s infinite;
+}
+.box {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  line-height: 400px;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  border-radius: 50%;
+  perspective: 100px;
+  transform-style: preserve-3d;
+}
+.box1 {
+  background-color: skyblue;
+  left: 0;
+  top: -50%;
+  transform: rotateX(90deg);
+}
+.box2 {
+  background-color: blue;
+  left: 0;
+  top: 50%;
+  transform: rotateX(-90deg);
+}
+.box3 {
+  background-color: pink;
+  top: 0;
+  left: 0;
+  transform: translateZ(200px);
+}
+.box4 {
+  background-color: red;
+  top: 0;
+  left: 0;
+  transform: translateZ(-200px) rotateX(180deg);
+}
+.box5 {
+  background-color: violet;
+  left: -50%;
+  top: 0;
+  transform: rotateY(90deg) rotateX(180deg);
+}
+.box6 {
+  background-color: purple;
+  left: 50%;
+  top: 0;
+  transform: rotateY(-90deg) rotateX(180deg);
+}
+
+.tri-con {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  transition: 5s;
+  transform-style: preserve-3d;	
+  animation: linear spin2 .5s infinite;
+}
+
+.tri {
+  position: absolute;
+  width: 0;	
+  height: 0;
+}
+.tri1 {
+  top: 50px;
+  left: 0;
+  border-top: 200px solid none;
+  border-bottom: 200px solid red;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  transform: rotateX(-60deg);
+}
+.tri2 {
+  top: 0;
+  left: 50px;
+  border-top: 200px solid none;
+  border-bottom: 200px solid orange;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  transform: rotate(-90deg) rotateX(-60deg);
+}
+.tri3 {
+  top: -50px;
+  left: 0;
+  border-top: 200px solid none;
+  border-bottom: 200px solid blue;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  transform: rotate(180deg) rotateX(-60deg);
+}
+.tri4 {
+  left: -50px;
+  top: 0;
+  border-top: 200px solid none;
+  border-bottom: 200px solid green;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  transform: rotate(90deg) rotateX(-60deg);
+}
